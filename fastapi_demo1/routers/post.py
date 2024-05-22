@@ -25,7 +25,7 @@ async def get_all_posts():
     return list(post_table.values())
 
 
-@post_router.post("/comments", response_model=Comment, status_code=201)
+@post_router.post("/comment", response_model=Comment, status_code=201)
 async def create_comment(comment: CommentIn):
     post = find_post(comment.post_id)
     if not post:
